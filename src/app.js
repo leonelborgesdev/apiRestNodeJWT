@@ -17,6 +17,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use(productsRoutes);
+app.use("/products", productsRoutes);
 
 export default app;
