@@ -1,13 +1,15 @@
 {
   "name": "noderesapijwt",
   "version": "1.0.0",
-  "description": "",
+  "description": "una simple rest API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir build",
+    "dev": "nodemon src/index.js --exec babel-node",
+    "start": "node build/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Leonel",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
