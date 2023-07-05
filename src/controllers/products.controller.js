@@ -1,4 +1,7 @@
-export const createProduct = (req, res) => {};
+export const createProduct = (req, res) => {
+  console.log(req.body);
+  res.json("creating product");
+};
 
 export const getProducts = (req, res) => {
   res.json("get products");
