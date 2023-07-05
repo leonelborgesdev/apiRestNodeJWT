@@ -20,6 +20,15 @@ export const getProductById = async (req, res) => {
   res.status(200).json(product);
 };
 
-export const updateProductById = (req, res) => {};
+export const updateProductById = async (req, res) => {
+  const updateProduct = await Product.findByIdAndUpdate(
+    req.params.productId,
+    req.body,
+    {
+      new: true,
+    }
+  );
+  res.status(200).json(updateProduct);
+};
 
-export const deleteProductById = (req, res) => {};
+export const deleteProductById = async (req, res) => {};
