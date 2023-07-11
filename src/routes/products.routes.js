@@ -12,10 +12,14 @@ router.post(
   productCtrl.createProduct
 );
 router.get("/:productId", productCtrl.getProductById);
-router.put("/:productId", authJwt.verifyToken, productCtrl.updateProductById);
+router.put(
+  "/:productId",
+  [authJwt.verifyToken, authJwt.isAdmin],
+  productCtrl.updateProductById
+);
 router.delete(
   "/:productId",
-  [authJwt.verifyToken, authJwt.isModerator],
+  [authJwt.verifyToken, authJwt.isAdmin],
   productCtrl.deleteProductById
 );
 
